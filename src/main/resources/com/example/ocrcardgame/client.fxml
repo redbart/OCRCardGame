@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import com.example.ocrcardgame.Card?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.HBox?>
+<GridPane alignment="CENTER" xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.example.ocrcardgame.ClientController" fx:id="MainBox">
+
+    <fx:define>
+        <ColumnConstraints fx:id="cardColumnConstraints">
+            <minWidth>
+                <Card fx:constant="CARD_WIDTH"/>
+            </minWidth>
+        </ColumnConstraints>
+    </fx:define>
+
+    <fx:define>
+        <RowConstraints fx:id="cardRowConstraints">
+            <minHeight>
+                <Card fx:constant="CARD_HEIGHT"/>
+            </minHeight>
+        </RowConstraints>
+    </fx:define>
+
+    <columnConstraints>
+        <fx:reference source="cardColumnConstraints"/>
+        <fx:reference source="cardColumnConstraints"/>
+        <fx:reference source="cardColumnConstraints"/>
+    </columnConstraints>
+
+    <rowConstraints>
+        <fx:reference source="cardRowConstraints"/>
+        <fx:reference source="cardRowConstraints"/>
+        <fx:reference source="cardRowConstraints"/>
+    </rowConstraints>
+
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <VBox fx:id="deckBox" GridPane.rowIndex="0" GridPane.columnIndex="1">
+        <Text fx:id="leftInDeckText" text="Cards in Deck: 14"/>
+    </VBox>
+    <HBox fx:id="player1CardBox" GridPane.rowIndex="1" GridPane.columnIndex="0" alignment="CENTER" >
+        <Text fx:id="player1HandText" text="Cards in Hand: 10" textAlignment="CENTER"/>
+    </HBox>
+    <HBox fx:id="player2CardBox" GridPane.rowIndex="1" GridPane.columnIndex="2" alignment="CENTER">
+        <Text fx:id="player2HandText" text="Cards in Hand: 6" textAlignment="CENTER"/>
+    </HBox>
+
+
+</GridPane>
